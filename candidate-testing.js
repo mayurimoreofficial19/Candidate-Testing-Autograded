@@ -3,30 +3,11 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-let candidateName;
+let candidateName = " ";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = " ";
-
-//Candidate Name
-candidateName = input.question(" ");
-console.log("Candidate Name : " + candidateName);
-
-//Question 1
-candidateAnswer = input.question(question);
-
-    if(correctAnswer.localeCompare(candidateAnswer) && correctAnswer.toUpperCase() === candidateAnswer.toUpperCase())
-      {
-        console.log("Congrats! Your answer is right");
-      }
-      else
-      {
-        console.log("Candidate Answer : " + candidateAnswer);
-        console.log("Correct Answer : " + correctAnswer);
-      }
-
-
 
 //TODO: Variables for Part 2
 let questions;
@@ -36,19 +17,27 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
+  candidateName = input.question("Enter candidate Name : ");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
+  candidateAnswer = input.question(question);
 
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+  if(correctAnswer.localeCompare(candidateAnswer) && correctAnswer.toUpperCase() === candidateAnswer.toUpperCase())
+    {
+      console.log("Congrats! Your answer is right");
+    }
+    else
+    {
+      console.log("Candidate Answer : " + candidateAnswer);
+      console.log("Correct Answer : " + correctAnswer);
+    }
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
@@ -60,7 +49,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log();
+   console.log("Candidate Name : " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
