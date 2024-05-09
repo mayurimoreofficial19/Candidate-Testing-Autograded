@@ -5,9 +5,27 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
-let candidateAnswer;
+let question = "Who was the first American women in space?\n";
+let correctAnswer = "Sally Ride";
+let candidateAnswer = " ";
+
+//Candidate Name
+candidateName = input.question("Candidate Name : ");
+console.log("Candidate Name : " + candidateName);
+
+//Question 1
+candidateAnswer = input.question(question);
+
+    if(correctAnswer.localeCompare(candidateAnswer) && correctAnswer.toUpperCase() === candidateAnswer.toUpperCase())
+      {
+        console.log("Congrats! Your answer is right");
+      }
+      else
+      {
+        console.log("Candidate Answer : " + candidateAnswer);
+        console.log("Correct Answer : " + correctAnswer);
+      }
+
 
 
 //TODO: Variables for Part 2
