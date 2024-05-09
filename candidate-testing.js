@@ -10,7 +10,7 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = " ";
 
 //Candidate Name
-candidateName = input.question("Candidate Name : ");
+candidateName = input.question(" ");
 console.log("Candidate Name : " + candidateName);
 
 //Question 1
