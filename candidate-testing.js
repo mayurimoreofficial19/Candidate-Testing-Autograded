@@ -30,7 +30,7 @@ function askQuestion() {
 
       // console.log("***********************************************");
       
-       console.log("Candidate Answer : " + candidateAnswers.push(candidateAnswer));
+       console.log(candidateAnswers.push(candidateAnswer));
       // console.log("CandidateAnswer inside askQuestion(): " + candidateAnswers);
       
     }
