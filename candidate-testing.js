@@ -68,7 +68,7 @@ function runProgram() {
   askQuestion();
   console.log("***********************************************");
   console.log("Candidate Name : " + candidateName);
-  gradeQuiz(candidateAnswers);
+  gradeQuiz(this.candidateAnswers);
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
