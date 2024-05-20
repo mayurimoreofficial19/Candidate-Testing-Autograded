@@ -22,17 +22,13 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  // candidateAnswer = input.question(question);
 
   for(let i = 0; i < questions.length; i++)
     {
       candidateAnswer = input.question(questions[i]);
 
-      // console.log("***********************************************");
-      
-       console.log(candidateAnswers.push(candidateAnswer));
-      // console.log("CandidateAnswer inside askQuestion(): " + candidateAnswers);
-      
+      candidateAnswers.push(candidateAnswer);
+      //console.log(candidateAnswers);
     }
 }
 
@@ -40,18 +36,27 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
-    // console.log("***********************************************");
-    // console.log("CandidateAnswer inside gradeQuiz():" + candidateAnswers);
-    // console.log("***********************************************");
-
       for(let j = 0; j < correctAnswers.length; j++)
         {
-          if((!correctAnswers.includes(candidateAnswers)))
+          if(correctAnswers[j].toUpperCase() === candidateAnswers[j].toUpperCase())
             {
-              console.log(`${questions[j]}`);
-              console.log(`Candidate Answer :  ${candidateAnswers[j]}`);
-              console.log(`Correct Answer :  ${correctAnswers[j]}`);
+              console.log(`Your answer is correct : ${candidateAnswers[j]}`);
             }
+            else
+            {
+              console.log(`Your answer is wrong : ${candidateAnswers[j]}`);
+            }
+          // if((!correctAnswers.includes(candidateAnswers)))
+          //   {
+          //     console.log(`${candidateAnswer[j]} : You answered correctly`);
+          //     // console.log(`${questions[j]}`);
+          //     // console.log(`Candidate Answer :  ${candidateAnswers[j]}`);
+          //     // console.log(`Correct Answer :  ${correctAnswers[j]}`);
+          //   }
+          //   else
+          //   {
+          //     console.log(`${candidateAnswer[j]} : Your is wrong answer`);
+          //   }
         }
  
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
