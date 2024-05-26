@@ -25,10 +25,10 @@ function askQuestion() {
 
   for(let i = 0; i < questions.length; i++)
     {
-      candidateAnswer = input.question(questions[i]);
+      candidateAnswer = input.question(`${i + 1}) ${questions[i]}`);
 
       candidateAnswers.push(candidateAnswer);
-      //console.log(candidateAnswers);
+      console.log();
     }
 }
 
@@ -36,30 +36,44 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   
+      let candidateScore = '';
+
       for(let j = 0; j < correctAnswers.length; j++)
         {
           if(correctAnswers[j].toUpperCase() === candidateAnswers[j].toUpperCase())
             {
-              console.log(`Your answer is correct : ${candidateAnswers[j]}`);
+              candidateScore++; 
+             
+              console.log(`${j + 1}) You answered correct : ${candidateAnswers[j]}`);
             }
             else
             {
-              console.log(`Your answer is wrong : ${candidateAnswers[j]}`);
+              console.log(`${j + 1}) You answered wrong : ${candidateAnswers[j]}`);
             }
           // if((!correctAnswers.includes(candidateAnswers)))
           //   {
-          //     console.log(`${candidateAnswer[j]} : You answered correctly`);
-          //     // console.log(`${questions[j]}`);
-          //     // console.log(`Candidate Answer :  ${candidateAnswers[j]}`);
-          //     // console.log(`Correct Answer :  ${correctAnswers[j]}`);
-          //   }
-          //   else
-          //   {
-          //     console.log(`${candidateAnswer[j]} : Your is wrong answer`);
-          //   }
+          //     console.log(`${j + 1}) ${questions[j]}`);
+          //     console.log(`Your Answer :  ${candidateAnswers[j]}`);
+          //     console.log(`Correct Answer :  ${correctAnswers[j]}`);
+          //    }
         }
+        console.log();
  
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  
+  grade = (candidateScore / questions.length) * 100;
+
+  if(Number(grade) >= 80)
+    {
+      console.log(`>>>>>>> Overall Grade: ${grade}% (${candidateScore} of ${questions.length} responses correct) <<<<<<<<<<`);
+      console.log(`>>>>>>> Status : PASSED <<<<<<<<<<`);
+    }
+    else
+    {
+      console.log(`>>>>>>> Overall Grade: ${grade}% (${candidateScore} of ${questions.length} responses correct) <<<<<<<<<<`);
+      console.log(`>>>>>>> Status : FAILED <<<<<<<<<<`);
+    }
+  console.log();
 
   return grade;
 }
@@ -67,6 +81,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   
   askForName();
+  console.log();
   // TODO 1.1c: Greet candidate using their name //
   console.log("Hello! " + candidateName);
 
